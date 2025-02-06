@@ -1,15 +1,29 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    // Simulate saving signup data (replace this with actual backend integration)
-    console.log("User signed up successfully!");
-    alert("Signup successful! Redirecting to login...");
-    navigate("/login"); // Redirect to login page
+    try {
+      await axios.post("http://localhost:10000/policyholders", {
+        name,
+        email,
+        age,
+        password,
+      });
+      alert("Signup successful! Redirecting to login...");
+      navigate("/login");
+    } catch (error) {
+      alert("Signup failed. Please try again.");
+    }
   };
 
   return (
@@ -25,24 +39,32 @@ const Signup = () => {
             <input
               type="text"
               placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full p-2 border rounded mb-2"
               required
             />
             <input
               type="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 border rounded mb-2"
               required
             />
             <input
               type="number"
               placeholder="Age"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
               className="w-full p-2 border rounded mb-2"
               required
             />
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full p-2 border rounded mb-2"
               required
             />
