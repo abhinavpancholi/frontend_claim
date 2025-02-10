@@ -24,7 +24,9 @@ const SubmitClaim = () => {
       );
       alert("Claim submitted successfully!");
     } catch (error) {
-      alert("Failed to submit claim. Please try again.");
+      // alert("Failed to submit claim. Please try again.");
+      const errorMessage = error.response?.data?.message || "Failed to create claim. Please try again.";
+      alert(errorMessage);
     }
   };
 

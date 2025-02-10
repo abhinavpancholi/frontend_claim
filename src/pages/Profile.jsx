@@ -248,7 +248,8 @@ const Profile = () => {
               <div key={policy._id} className="mt-4 p-4 bg-gray-50 rounded">
                 <p className="text-gray-600">Policy ID: {policy._id}</p>
                 <p className="text-gray-600">Type: {policy.policyType}</p>
-                <p className="text-gray-600">Coverage: ${policy.coverageAmount}</p>
+                <p className="text-gray-600">Coverage: Rs.{policy.coverageAmount}</p>
+                <p className="text-gray-600">Status: {policy.status}</p>
               </div>
             ))
           ) : (

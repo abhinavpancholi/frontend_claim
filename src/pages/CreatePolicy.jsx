@@ -90,6 +90,7 @@ const CreatePolicy = () => {
   // const [policyType, setPolicyType] = useState("");
   const [policyType, setPolicyType] = useState("Health Insurance");
   const [coverageAmount, setCoverageAmount] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleCreatePolicy = async (e) => {
     e.preventDefault();
@@ -109,7 +110,9 @@ const CreatePolicy = () => {
       );
       alert("Policy created successfully!");
     } catch (error) {
-      alert("Failed to create policy. Please try again.");
+      // alert("Failed to create policy. Please try again.");
+      const errorMessage = error.response?.data?.message || "Failed to create policy. Please try again.";
+      alert(errorMessage);
       console.error("Error creating policy:", error.response?.data || error.message);
     }
   };
@@ -143,6 +146,14 @@ const CreatePolicy = () => {
               onChange={(e) => setCoverageAmount(e.target.value)}
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 mb-4"
             />
+            {/* <label className="block mb-2 font-medium">activity</label>
+            <input
+              type="number"
+              placeholder="Enter coverage amount"
+              value={coverageAmount}
+              onChange={(e) => setStatus(e.target.value)}
+              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 mb-4"
+            /> */}
 
             <button className="bg-blue-600 text-white w-full p-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
               Create Policy

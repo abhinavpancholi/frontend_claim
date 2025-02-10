@@ -22,7 +22,10 @@ const Signup = () => {
       alert("Signup successful! Redirecting to login...");
       navigate("/login");
     } catch (error) {
-      alert("Signup failed. Please try again.");
+      // alert("Signup failed. Please try again.");
+      const errorMessage = error.response?.data?.message || "Failed to create policy. Please try again.";
+      alert(errorMessage);
+      console.error("Error creating policy:", error.response?.data || error.message);
     }
   };
 
