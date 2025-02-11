@@ -24,7 +24,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:10000/auth/logout', null, {
+      await axios.post('https://backend-claims-t2an.onrender.com/auth/logout', null, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

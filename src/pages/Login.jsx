@@ -30,7 +30,7 @@ const Login = () => {
       <Navbar />
       <div
         className="relative h-screen bg-cover bg-center flex items-center flex justify-center items-center min-h-screen bg-gray-100"
-        style={{ backgroundImage: "url('/src/assets/bg.webp')" }}
+        style={{ backgroundImage: "url('/assets/bg.webp')" }}
       >
         <div className="bg-white p-8 rounded-lg shadow-hg w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Login</h2>
