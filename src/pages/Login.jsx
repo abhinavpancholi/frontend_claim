@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:10000/auth/policyholder/login", {
+      const response = await axios.post("https://backend-claims-t2an.onrender.com/auth/policyholder/login", {
         email,
         password,
       });

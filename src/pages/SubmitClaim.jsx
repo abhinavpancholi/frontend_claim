@@ -11,7 +11,7 @@ const SubmitClaim = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:10000/claims",
+        "https://backend-claims-t2an.onrender.com/claims",
         {
           policyId,
           claimAmount,

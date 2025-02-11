@@ -97,7 +97,7 @@ const CreatePolicy = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:10000/policies",
+        "https://backend-claims-t2an.onrender.com/policies",
         {
           policyType,
           coverageAmount,

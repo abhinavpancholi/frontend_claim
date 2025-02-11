@@ -13,7 +13,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:10000/policyholders", {
+      await axios.post("https://backend-claims-t2an.onrender.com/policyholders", {
         name,
         email,
         age,

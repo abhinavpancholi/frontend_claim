@@ -214,7 +214,7 @@ const Profile = () => {
 
         // Fetch policies
         const policiesResponse = await axios.get(
-          "http://localhost:10000/policies/my-policies",
+          "https://backend-claims-t2an.onrender.com/my-policies",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
