@@ -214,7 +214,7 @@ const Profile = () => {
 
         // Fetch policies
         const policiesResponse = await axios.get(
-          "https://backend-claims-t2an.onrender.com/my-policies",
+          "https://backend-claims-t2an.onrender.com/policies/my-policies",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -222,7 +222,7 @@ const Profile = () => {
 
         // Fetch claims
         const claimsResponse = await axios.get(
-          "http://localhost:10000/claims/my-claim",
+          "https://backend-claims-t2an.onrender.com/claims/my-claim",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
